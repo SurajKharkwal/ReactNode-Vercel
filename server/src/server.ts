@@ -14,7 +14,7 @@ app.get("/api/hello", (req: Request, res: Response) => {
 // Serve React build
 app.use(express.static(path.join(__dirname, '../../client/dist/')));
 
-app.get('*', (req: Request, res: any) => {
+app.get('*', (req: Request, res: Response) => {
   console.log(req.method)
   res.sendFile(path.join(__dirname, '../../client/dist', 'index.html'));
 });
